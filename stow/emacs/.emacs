@@ -33,9 +33,6 @@
 ;; Manual set faces
 (set-face-foreground 'minibuffer-prompt "green")
 
-;;polopoly xml import
-;; (require 'pp-import)
-
 ;; Backup settings
 (setq
    backup-by-copying t      ; don't clobber symlinks

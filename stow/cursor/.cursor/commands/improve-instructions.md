@@ -6,7 +6,7 @@ Use the conversation so far in this chat as your primary signal.
 
 Then, examine the current agent instructions:
 <cursor_instructions>
- ~/.cursor/rules/RULE.md
+ ~/.cursor/rules/RULE.mdc
 </cursor_instructions>
 
 (If this repo uses a different file for Cursor rules/instructions, use that file instead and say which one you used.)

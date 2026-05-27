@@ -1,1 +1,4 @@
-find dotfiles -type f -exec ln -sv `pwd`/{} ~ \;
+#!/usr/bin/env bash
+set -euo pipefail
+
+make install

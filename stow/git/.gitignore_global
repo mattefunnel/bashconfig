@@ -7,3 +7,8 @@ venv27
 node_modules
 dist
 .DS_Store
+local_us_overrides.env
+.gradle
+.worktrees
+.booger
+**/.claude/settings.local.json

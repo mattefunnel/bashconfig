@@ -1,8 +1,13 @@
+---
+description: Core Cursor agent defaults for Mattias' dotfiles
+alwaysApply: true
+---
+
 # Cursor Agent Instructions
 
 ## Defaults
 - Be direct and concise.
-- If uncertain, say “I don’t know” and propose how to verify.
+- If uncertain, say "I don't know" and propose how to verify.
 - Prefer minimal, surgical changes over refactors.
 
 ## Workflow inside Cursor
@@ -12,4 +17,4 @@
 
 ## Tooling
 - If a task involves build/test/format steps, suggest the exact commands.
-- If command output is needed, ask for it (don’t guess).
+- If command output is needed, ask for it instead of guessing.
