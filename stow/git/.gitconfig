@@ -37,9 +37,10 @@
 [core]
     pager = less -FRSX
     whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
-    excludesfile = /Users/folkol/.gitignore_global
+    excludesfile = /Users/mattias.johansson/.gitignore_global
 
 [alias]
+    abbr = rev-parse --short
     all = cat-file --batch-check --batch-all-objects --unordered
     alias = config --get-regexp ^alias\\.
     new = log -u --since='1 week ago'
@@ -60,9 +61,9 @@
 	rebase = false
  [user]
     name = Matte
-    email = folkol@mailbox.org
+    email = mattias.johansson@funnel.io
 [commit]
-	template = /Users/folkol/.gitmessage
+	template = /Users/mattias.johansson/.gitmessage
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -70,5 +71,13 @@
 	required = true
 [pretty]
 	oneline-with-author = format:%h|%cI|%cn|%s
+[safe]
+	bareRepository = explicit
 [git-mob]
 	co-author = Viktor Tell <viktor@funnel.io>
+[credential "https://github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential

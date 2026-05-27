@@ -8,7 +8,7 @@ ifeq ($(STOW),)
 $(error "stow not found. Install GNU Stow first.")
 endif
 
-.PHONY: install-all uninstall restow adopt list
+.PHONY: install uninstall restow adopt list
 
 install:
 	stow -d $(STOW_DIR) -t $(TARGET) $(PACKAGES)

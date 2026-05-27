@@ -1,95 +1,50 @@
-GIT_PROMPT_ONLY_IN_REPO=1
-GIT_PROMPT_END="\n★ "
-[ -f /usr/local/share/gitprompt.sh ] && . /usr/local/share/gitprompt.sh
-[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+case $- in
+  *i*) ;;
+  *) return ;;
+esac
 
-#echo "Now executing ~/.bashrc"
-#
-#export PATH="/opt/local/bin:$PATH"
-#
-#### IMPORTS
-#source ~/bin/git-completion.bash
-#
-##export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home
-#
-#
-#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+[[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
+[[ -r "/opt/homebrew/share/bash-completion/completions/git" ]] && . "/opt/homebrew/share/bash-completion/completions/git"
+[[ -r "/opt/homebrew/etc/bash_completion.d/aws_completer" ]] && . "/opt/homebrew/etc/bash_completion.d/aws_completer"
 
+if [[ -z "$CLAUDECODE" && -s "$HOME/.scm_breeze/scm_breeze.sh" ]]; then
+  . "$HOME/.scm_breeze/scm_breeze.sh"
+fi
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[[ -s "/opt/homebrew/opt/nvm/nvm.sh" ]] && . "/opt/homebrew/opt/nvm/nvm.sh"
+[[ -s "$NVM_DIR/nvm.sh" ]] && . "$NVM_DIR/nvm.sh"
+[[ -s "$NVM_DIR/bash_completion" ]] && . "$NVM_DIR/bash_completion"
 
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[ -f /Users/folkol/node_modules/tabtab/.completions/serverless.bash ] && . /Users/folkol/node_modules/tabtab/.completions/serverless.bash
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[ -f /Users/folkol/node_modules/tabtab/.completions/sls.bash ] && . /Users/folkol/node_modules/tabtab/.completions/sls.bash
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+[[ -s "$HOME/.fzf.bash" ]] && . "$HOME/.fzf.bash"
+[[ -s "$HOME/.asdf/asdf.sh" ]] && . "$HOME/.asdf/asdf.sh"
+[[ -s "$HOME/.iterm2_shell_integration.bash" ]] && . "$HOME/.iterm2_shell_integration.bash"
+[[ -s "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"
 
-[ -s "/Users/folkol/.rvm/scripts/rvm" ] && source $HOME/.rvm/scripts/rvm
-[ -s "/Users/folkol/.scm_breeze/scm_breeze.sh" ] && source "/Users/folkol/.scm_breeze/scm_breeze.sh"
+if command -v direnv >/dev/null 2>&1; then
+  eval "$(direnv hook bash)"
+fi
 
-PATH="/Users/folkol/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/Users/folkol/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/Users/folkol/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/Users/folkol/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/Users/folkol/perl5"; export PERL_MM_OPT;
-
-# added by travis gem
-[ -f /Users/folkol/.travis/travis.sh ] && source /Users/folkol/.travis/travis.sh
-
-# Created by `userpath` on 2020-08-07 19:24:13
-export PATH="$PATH:/Users/folkol/.local/bin"
-# pyenv
-#eval "$(pyenv init -)"
-
-# pyenv-virtualenv:
-#eval "$(pyenv virtualenv-init -)"
-function updatePrompt {
-
-    # Styles
-    GREEN='\[\e[0;32m\]'
-    BLUE='\[\e[0;34m\]'
-    RESET='\[\e[0m\]'
-
-    # Base prompt: \W = working dir
-    PROMPT="\W"
-
-    # Current Git repo
-    if type "__git_ps1" > /dev/null 2>&1; then
-        PROMPT="$PROMPT$(__git_ps1 "${GREEN}(%s)${RESET}")"
-    fi
-
-    # Current virtualenv
-    if [[ $VIRTUAL_ENV != "" ]]; then
-        # Strip out the path and just leave the env name
-        PROMPT="$PROMPT${BLUE}{${VIRTUAL_ENV##*/}}${RESET}"
-    fi
-
-    PS1="$PROMPT\$ "
-}
-export -f updatePrompt
-
-# Bash shell executes this function just before displaying the PS1 variable
-export PROMPT_COMMAND='updatePrompt'
-#source "$HOME/.cargo/env"
-##. "$HOME/.cargo/env"
-
-. "/opt/homebrew/opt/asdf/libexec/asdf.sh"
-eval "$($(which direnv) hook bash)"
-
-# bun
 export BUN_INSTALL="$HOME/.bun"
-export PATH=$BUN_INSTALL/bin:$PATH
+export PNPM_HOME="$HOME/Library/pnpm"
+export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$BUN_INSTALL/bin:$PNPM_HOME:$PATH"
 
-# pnpm
-export PNPM_HOME="/Users/folkol/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-[ -f ~/.asdfh/asdf.sh ] && . ~/.asdf/asdf.sh
-[ -f /opt/homebrew/bin/direnv ] && eval "$(/opt/homebrew/bin/direnv hook bash)"
+set_prompt() {
+  history -n
+  history -a
+
+  local prompt="\W"
+  if type "__git_ps1" >/dev/null 2>&1; then
+    prompt="$prompt$(__git_ps1 " \[\e[32m\](%s)\[\e[0m\]")"
+  fi
+  if [[ -n "$VIRTUAL_ENV" ]]; then
+    prompt="$prompt \[\e[34m\]{${VIRTUAL_ENV##*/}}\[\e[0m\]"
+  fi
+  if [[ -n "$ACTIVE_PROFILE" ]]; then
+    prompt="\[\e[31m\]($ACTIVE_PROFILE) \[\e[0m\]$prompt"
+  fi
+  PS1="$prompt\$ "
+}
+
+PROMPT_COMMAND=set_prompt

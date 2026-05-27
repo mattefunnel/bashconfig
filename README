@@ -1,8 +1,11 @@
-# folkol's dotfiles
+# Mattias' dotfiles
 
-Links some stuff to $HOME.
+Links selected packages from `stow/` into `$HOME`.
 
 ```
 $ brew install stow
-$ make
+$ make install
 ```
+
+For an existing machine with real files already in `$HOME`, use `make adopt`
+once to let Stow take ownership.

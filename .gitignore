@@ -1,1 +1,32 @@
 *~
+
+# Cursor transient/generated content
+stow/cursor/.cursor/plans/
+stow/cursor/.cursor/projects/
+
+# Personal/internal skills (kept on disk via stow, untracked)
+stow/claude/.claude/skills/actix-to-axum/
+stow/claude/.claude/skills/align-notes/
+stow/claude/.claude/skills/align-query-engine-notes/
+stow/claude/.claude/skills/audit-coverage/
+stow/claude/.claude/skills/maintenance-test-trustworthiness/
+stow/claude/.claude/skills/port-parity-test/
+stow/claude/.claude/skills/sshuttle-debug.md
+stow/claude/.claude/skills/standup/
+stow/claude/.claude/skills/update-compactor-notion-pages/
+stow/claude/.claude/skills/update-query-engine-notion-pages/
+
+# Matt Pocock skills (symlinks into ~/.agents/skills/)
+stow/claude/.claude/skills/diagnose
+stow/claude/.claude/skills/find-skills
+stow/claude/.claude/skills/grill-me
+stow/claude/.claude/skills/grill-with-docs
+stow/claude/.claude/skills/handoff
+stow/claude/.claude/skills/improve-codebase-architecture
+stow/claude/.claude/skills/prototype
+stow/claude/.claude/skills/setup-matt-pocock-skills
+stow/claude/.claude/skills/tdd
+stow/claude/.claude/skills/to-issues
+stow/claude/.claude/skills/to-prd
+stow/claude/.claude/skills/write-a-skill
+stow/claude/.claude/skills/zoom-out
