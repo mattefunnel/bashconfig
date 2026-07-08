@@ -1,0 +1,90 @@
+{
+  "multi/vanilla": {
+    "word_count": {
+      "mean": 276.2,
+      "stdev": 38.44,
+      "n": 10
+    },
+    "over_budget": {
+      "mean": 1,
+      "stdev": 0.0,
+      "n": 10
+    },
+    "has_table": {
+      "mean": 1,
+      "stdev": 0.0,
+      "n": 10
+    },
+    "raw_json": {
+      "mean": 0,
+      "stdev": 0.0,
+      "n": 10
+    }
+  },
+  "multi/agent": {
+    "word_count": {
+      "mean": 96.5,
+      "stdev": 1.28,
+      "n": 10
+    },
+    "over_budget": {
+      "mean": 0,
+      "stdev": 0.0,
+      "n": 10
+    },
+    "has_table": {
+      "mean": 1,
+      "stdev": 0.0,
+      "n": 10
+    },
+    "raw_json": {
+      "mean": 0,
+      "stdev": 0.0,
+      "n": 10
+    }
+  },
+  "single/vanilla": {
+    "word_count": {
+      "mean": 177.7,
+      "stdev": 20.92,
+      "n": 10
+    },
+    "over_budget": {
+      "mean": 0,
+      "stdev": 0.0,
+      "n": 10
+    },
+    "has_table": {
+      "mean": 1,
+      "stdev": 0.0,
+      "n": 10
+    },
+    "raw_json": {
+      "mean": 0,
+      "stdev": 0.0,
+      "n": 10
+    }
+  },
+  "single/agent": {
+    "word_count": {
+      "mean": 63.9,
+      "stdev": 6.86,
+      "n": 10
+    },
+    "over_budget": {
+      "mean": 0,
+      "stdev": 0.0,
+      "n": 10
+    },
+    "has_table": {
+      "mean": 1,
+      "stdev": 0.0,
+      "n": 10
+    },
+    "raw_json": {
+      "mean": 0,
+      "stdev": 0.0,
+      "n": 10
+    }
+  }
+}

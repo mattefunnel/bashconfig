@@ -1,0 +1,636 @@
+{
+  "cells": {
+    "fixture-1/with_skill/opus": {
+      "n_runs": 6,
+      "tp_rate_mean": 0.8333333333333334,
+      "tp_rate_stdev": 0.08164965809277258,
+      "silence_rate_mean": 0.7777777777777778,
+      "silence_rate_stdev": 0.2509242175696937,
+      "fp_total": 2,
+      "fp_soft_total": 4,
+      "tp_strict_total": 25,
+      "missing_total": 5,
+      "p_outcomes": {
+        "P1": [
+          "tp",
+          "tp",
+          "tp",
+          "tp",
+          "tp",
+          "tp"
+        ],
+        "P2": [
+          "tp",
+          "tp",
+          "tp",
+          "tp",
+          "tp",
+          "tp"
+        ],
+        "P3": [
+          "tp",
+          "tp",
+          "tp",
+          "tp",
+          "tp",
+          "tp"
+        ],
+        "P4": [
+          "missing",
+          "tp",
+          "missing",
+          "missing",
+          "missing",
+          "missing"
+        ],
+        "P5": [
+          "tp",
+          "tp",
+          "tp",
+          "tp",
+          "tp",
+          "tp"
+        ]
+      },
+      "c_outcomes": {
+        "C1": [
+          "correct_silence",
+          "correct_silence",
+          "correct_silence",
+          "correct_silence",
+          "correct_silence",
+          "correct_silence"
+        ],
+        "C2": [
+          "correct_silence",
+          "fp_soft",
+          "fp_soft",
+          "fp",
+          "correct_silence",
+          "correct_silence"
+        ],
+        "C3": [
+          "correct_silence",
+          "correct_silence",
+          "fp_soft",
+          "fp",
+          "correct_silence",
+          "fp_soft"
+        ]
+      }
+    },
+    "fixture-1/with_skill/sonnet": {
+      "n_runs": 6,
+      "tp_rate_mean": 0.7666666666666667,
+      "tp_rate_stdev": 0.08164965809277264,
+      "silence_rate_mean": 0.9722222222222222,
+      "silence_rate_stdev": 0.06804138174397716,
+      "fp_total": 0,
+      "fp_soft_total": 1,
+      "tp_strict_total": 23,
+      "missing_total": 7,
+      "p_outcomes": {
+        "P1": [
+          "tp",
+          "tp",
+          "tp",
+          "tp",
+          "tp",
+          "tp"
+        ],
+        "P2": [
+          "tp",
+          "tp",
+          "tp",
+          "tp",
+          "tp",
+          "tp"
+        ],
+        "P3": [
+          "tp",
+          "missing",
+          "tp",
+          "tp",
+          "tp",
+          "tp"
+        ],
+        "P4": [
+          "missing",
+          "missing",
+          "missing",
+          "missing",
+          "missing",
+          "missing"
+        ],
+        "P5": [
+          "tp",
+          "tp",
+          "tp",
+          "tp",
+          "tp",
+          "tp"
+        ]
+      },
+      "c_outcomes": {
+        "C1": [
+          "correct_silence",
+          "correct_silence",
+          "correct_silence",
+          "correct_silence",
+          "correct_silence",
+          "correct_silence"
+        ],
+        "C2": [
+          "correct_silence",
+          "fp_soft",
+          "correct_silence",
+          "correct_silence",
+          "correct_silence",
+          "correct_silence"
+        ],
+        "C3": [
+          "correct_silence",
+          "correct_silence",
+          "correct_silence",
+          "correct_silence",
+          "correct_silence",
+          "correct_silence"
+        ]
+      }
+    },
+    "fixture-1/no_hotspots/opus": {
+      "n_runs": 6,
+      "tp_rate_mean": 0.8166666666666667,
+      "tp_rate_stdev": 0.11690451944500123,
+      "silence_rate_mean": 0.8333333333333334,
+      "silence_rate_stdev": 0.27888667551135854,
+      "fp_total": 3,
+      "fp_soft_total": 0,
+      "tp_strict_total": 22,
+      "missing_total": 3,
+      "p_outcomes": {
+        "P1": [
+          "tp",
+          "tp",
+          "tp",
+          "tp_partial",
+          "tp",
+          "tp"
+        ],
+        "P2": [
+          "tp",
+          "missing",
+          "tp",
+          "tp_partial",
+          "tp",
+          "tp"
+        ],
+        "P3": [
+          "tp",
+          "tp_partial",
+          "tp",
+          "tp",
+          "tp",
+          "tp"
+        ],
+        "P4": [
+          "missing",
+          "tp",
+          "tp_partial",
+          "tp_partial",
+          "missing",
+          "tp"
+        ],
+        "P5": [
+          "tp",
+          "tp",
+          "tp",
+          "tp",
+          "tp",
+          "tp"
+        ]
+      },
+      "c_outcomes": {
+        "C1": [
+          "fp",
+          "correct_silence",
+          "correct_silence",
+          "correct_silence",
+          "correct_silence",
+          "correct_silence"
+        ],
+        "C2": [
+          "fp",
+          "correct_silence",
+          "correct_silence",
+          "correct_silence",
+          "correct_silence",
+          "correct_silence"
+        ],
+        "C3": [
+          "correct_silence",
+          "correct_silence",
+          "correct_silence",
+          "correct_silence",
+          "correct_silence",
+          "fp"
+        ]
+      }
+    },
+    "fixture-1/no_hotspots/sonnet": {
+      "n_runs": 6,
+      "tp_rate_mean": 0.08333333333333334,
+      "tp_rate_stdev": 0.0752772652709081,
+      "silence_rate_mean": 0.9722222222222222,
+      "silence_rate_stdev": 0.06804138174397716,
+      "fp_total": 0,
+      "fp_soft_total": 1,
+      "tp_strict_total": 0,
+      "missing_total": 25,
+      "p_outcomes": {
+        "P1": [
+          "missing",
+          "missing",
+          "missing",
+          "tp_partial",
+          "missing",
+          "tp_partial"
+        ],
+        "P2": [
+          "missing",
+          "missing",
+          "missing",
+          "missing",
+          "missing",
+          "missing"
+        ],
+        "P3": [
+          "missing",
+          "missing",
+          "missing",
+          "missing",
+          "missing",
+          "missing"
+        ],
+        "P4": [
+          "missing",
+          "missing",
+          "missing",
+          "missing",
+          "missing",
+          "tp_partial"
+        ],
+        "P5": [
+          "tp_partial",
+          "tp_partial",
+          "missing",
+          "missing",
+          "missing",
+          "missing"
+        ]
+      },
+      "c_outcomes": {
+        "C1": [
+          "correct_silence",
+          "correct_silence",
+          "correct_silence",
+          "correct_silence",
+          "correct_silence",
+          "correct_silence"
+        ],
+        "C2": [
+          "correct_silence",
+          "correct_silence",
+          "fp_soft",
+          "correct_silence",
+          "correct_silence",
+          "correct_silence"
+        ],
+        "C3": [
+          "correct_silence",
+          "correct_silence",
+          "correct_silence",
+          "correct_silence",
+          "correct_silence",
+          "correct_silence"
+        ]
+      }
+    },
+    "fixture-2/with_skill/opus": {
+      "n_runs": 6,
+      "tp_rate_mean": 0.8,
+      "tp_rate_stdev": 0.0,
+      "silence_rate_mean": 0.5555555555555556,
+      "silence_rate_stdev": 0.17213259316477408,
+      "fp_total": 8,
+      "fp_soft_total": 0,
+      "tp_strict_total": 24,
+      "missing_total": 6,
+      "p_outcomes": {
+        "P1": [
+          "tp",
+          "tp",
+          "tp",
+          "tp",
+          "tp",
+          "tp"
+        ],
+        "P2": [
+          "tp",
+          "tp",
+          "tp",
+          "tp",
+          "tp",
+          "tp"
+        ],
+        "P3": [
+          "tp",
+          "tp",
+          "tp",
+          "tp",
+          "tp",
+          "tp"
+        ],
+        "P4": [
+          "tp",
+          "tp",
+          "tp",
+          "tp",
+          "tp",
+          "tp"
+        ],
+        "P5": [
+          "missing",
+          "missing",
+          "missing",
+          "missing",
+          "missing",
+          "missing"
+        ]
+      },
+      "c_outcomes": {
+        "C1": [
+          "fp",
+          "fp",
+          "fp",
+          "fp",
+          "fp",
+          "fp"
+        ],
+        "C2": [
+          "correct_silence",
+          "correct_silence",
+          "correct_silence",
+          "correct_silence",
+          "correct_silence",
+          "correct_silence"
+        ],
+        "C3": [
+          "correct_silence",
+          "fp",
+          "correct_silence",
+          "correct_silence",
+          "fp",
+          "correct_silence"
+        ]
+      }
+    },
+    "fixture-2/with_skill/sonnet": {
+      "n_runs": 6,
+      "tp_rate_mean": 0.8,
+      "tp_rate_stdev": 0.0,
+      "silence_rate_mean": 0.8333333333333334,
+      "silence_rate_stdev": 0.10540925533894599,
+      "fp_total": 1,
+      "fp_soft_total": 4,
+      "tp_strict_total": 24,
+      "missing_total": 6,
+      "p_outcomes": {
+        "P1": [
+          "tp",
+          "tp",
+          "tp",
+          "tp",
+          "tp",
+          "tp"
+        ],
+        "P2": [
+          "tp",
+          "tp",
+          "tp",
+          "tp",
+          "tp",
+          "tp"
+        ],
+        "P3": [
+          "tp",
+          "tp",
+          "tp",
+          "tp",
+          "tp",
+          "tp"
+        ],
+        "P4": [
+          "tp",
+          "tp",
+          "tp",
+          "tp",
+          "tp",
+          "tp"
+        ],
+        "P5": [
+          "missing",
+          "missing",
+          "missing",
+          "missing",
+          "missing",
+          "missing"
+        ]
+      },
+      "c_outcomes": {
+        "C1": [
+          "fp_soft",
+          "fp",
+          "correct_silence",
+          "fp_soft",
+          "fp_soft",
+          "fp_soft"
+        ],
+        "C2": [
+          "correct_silence",
+          "correct_silence",
+          "correct_silence",
+          "correct_silence",
+          "correct_silence",
+          "correct_silence"
+        ],
+        "C3": [
+          "correct_silence",
+          "correct_silence",
+          "correct_silence",
+          "correct_silence",
+          "correct_silence",
+          "correct_silence"
+        ]
+      }
+    },
+    "fixture-2/no_hotspots/opus": {
+      "n_runs": 6,
+      "tp_rate_mean": 0.4666666666666667,
+      "tp_rate_stdev": 0.08164965809277258,
+      "silence_rate_mean": 0.3611111111111111,
+      "silence_rate_stdev": 0.06804138174397718,
+      "fp_total": 11,
+      "fp_soft_total": 1,
+      "tp_strict_total": 11,
+      "missing_total": 13,
+      "p_outcomes": {
+        "P1": [
+          "missing",
+          "missing",
+          "missing",
+          "missing",
+          "tp_partial",
+          "missing"
+        ],
+        "P2": [
+          "tp",
+          "tp",
+          "tp",
+          "tp",
+          "tp",
+          "tp_partial"
+        ],
+        "P3": [
+          "missing",
+          "tp_partial",
+          "missing",
+          "tp_partial",
+          "tp_partial",
+          "tp_partial"
+        ],
+        "P4": [
+          "tp",
+          "tp",
+          "tp",
+          "tp",
+          "tp",
+          "tp"
+        ],
+        "P5": [
+          "missing",
+          "missing",
+          "missing",
+          "missing",
+          "missing",
+          "missing"
+        ]
+      },
+      "c_outcomes": {
+        "C1": [
+          "fp",
+          "fp",
+          "fp",
+          "fp",
+          "fp",
+          "fp"
+        ],
+        "C2": [
+          "correct_silence",
+          "correct_silence",
+          "correct_silence",
+          "correct_silence",
+          "correct_silence",
+          "correct_silence"
+        ],
+        "C3": [
+          "fp",
+          "fp_soft",
+          "fp",
+          "fp",
+          "fp",
+          "fp"
+        ]
+      }
+    },
+    "fixture-2/no_hotspots/sonnet": {
+      "n_runs": 6,
+      "tp_rate_mean": 0.38333333333333336,
+      "tp_rate_stdev": 0.04082482904638632,
+      "silence_rate_mean": 0.7222222222222222,
+      "silence_rate_stdev": 0.13608276348795437,
+      "fp_total": 5,
+      "fp_soft_total": 0,
+      "tp_strict_total": 11,
+      "missing_total": 18,
+      "p_outcomes": {
+        "P1": [
+          "missing",
+          "missing",
+          "missing",
+          "missing",
+          "missing",
+          "missing"
+        ],
+        "P2": [
+          "tp",
+          "tp",
+          "tp",
+          "tp",
+          "tp",
+          "tp"
+        ],
+        "P3": [
+          "missing",
+          "missing",
+          "missing",
+          "missing",
+          "missing",
+          "missing"
+        ],
+        "P4": [
+          "tp_partial",
+          "tp",
+          "tp",
+          "tp",
+          "tp",
+          "tp"
+        ],
+        "P5": [
+          "missing",
+          "missing",
+          "missing",
+          "missing",
+          "missing",
+          "missing"
+        ]
+      },
+      "c_outcomes": {
+        "C1": [
+          "fp",
+          "fp",
+          "fp",
+          "correct_silence",
+          "fp",
+          "fp"
+        ],
+        "C2": [
+          "correct_silence",
+          "correct_silence",
+          "correct_silence",
+          "correct_silence",
+          "correct_silence",
+          "correct_silence"
+        ],
+        "C3": [
+          "correct_silence",
+          "correct_silence",
+          "correct_silence",
+          "correct_silence",
+          "correct_silence",
+          "correct_silence"
+        ]
+      }
+    }
+  }
+}

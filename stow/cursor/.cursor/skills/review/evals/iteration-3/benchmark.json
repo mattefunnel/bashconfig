@@ -1,0 +1,66 @@
+{
+  "fixture-2/with_scoping/sonnet": {
+    "n": 6,
+    "tp_rate_mean": 0.767,
+    "tp_rate_std": 0.082,
+    "silence_rate_mean": 0.722,
+    "silence_rate_std": 0.136,
+    "hard_fps": 5
+  },
+  "fixture-2/with_scoping/opus": {
+    "n": 6,
+    "tp_rate_mean": 0.7,
+    "tp_rate_std": 0.11,
+    "silence_rate_mean": 0.667,
+    "silence_rate_std": 0.0,
+    "hard_fps": 6
+  },
+  "fixture-2/no_scoping/sonnet": {
+    "n": 6,
+    "tp_rate_mean": 0.883,
+    "tp_rate_std": 0.16,
+    "silence_rate_mean": 0.694,
+    "silence_rate_std": 0.068,
+    "hard_fps": 5
+  },
+  "fixture-2/no_scoping/opus": {
+    "n": 6,
+    "tp_rate_mean": 0.733,
+    "tp_rate_std": 0.103,
+    "silence_rate_mean": 0.611,
+    "silence_rate_std": 0.086,
+    "hard_fps": 6
+  },
+  "fixture-3/with_scoping/sonnet": {
+    "n": 6,
+    "tp_rate_mean": 1.0,
+    "tp_rate_std": 0.0,
+    "silence_rate_mean": 0.639,
+    "silence_rate_std": 0.068,
+    "hard_fps": 6
+  },
+  "fixture-3/with_scoping/opus": {
+    "n": 6,
+    "tp_rate_mean": 1.0,
+    "tp_rate_std": 0.0,
+    "silence_rate_mean": 1.0,
+    "silence_rate_std": 0.0,
+    "hard_fps": 0
+  },
+  "fixture-3/no_scoping/sonnet": {
+    "n": 6,
+    "tp_rate_mean": 1.0,
+    "tp_rate_std": 0.0,
+    "silence_rate_mean": 0.528,
+    "silence_rate_std": 0.164,
+    "hard_fps": 8
+  },
+  "fixture-3/no_scoping/opus": {
+    "n": 6,
+    "tp_rate_mean": 1.0,
+    "tp_rate_std": 0.0,
+    "silence_rate_mean": 0.583,
+    "silence_rate_std": 0.139,
+    "hard_fps": 7
+  }
+}

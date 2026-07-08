@@ -56,7 +56,7 @@
     hot = for-each-ref --count=20 --sort=-committerdate refs/remotes/ --format='%(refname:short)'
 
 [push]
-    default = upstream
+	default = current
 [pull]
 	rebase = false
  [user]

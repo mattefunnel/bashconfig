@@ -1,4 +1,4 @@
-# Mattias' dotfiles
+# Matte's dotfiles
 
 Links selected packages from `stow/` into `$HOME`.
 
@@ -9,3 +9,63 @@ $ make install
 
 For an existing machine with real files already in `$HOME`, use `make adopt`
 once to let Stow take ownership.
+
+## claude outer sandbox
+
+Claude Code's built-in sandbox only wraps **Bash** subprocesses. The main Claude process
+(Edit/Write tools, MCP servers, hooks) runs unsandboxed and is gated only by the permission
+system -- so `sandbox.filesystem.denyWrite` does NOT bind the Edit tool, for example.
+
+To wrap the **whole** Claude process under OS-level isolation (Seatbelt on macOS), use
+Anthropic's experimental `@anthropic-ai/sandbox-runtime` (`srt`). It applies the filesystem
+and network allow-lists to every tool, not just Bash.
+
+### Setup
+
+1. Install srt globally (the plain `npm install -g github:...` of the PR fork fails on a
+   husky prepare-script; use the released package):
+
+   ```
+   /opt/homebrew/bin/npm install -g @anthropic-ai/sandbox-runtime
+   ```
+
+2. Write the allow-list config to `~/.srt-settings.json`. Deny-read-all with an explicit
+   read allow-list; scoped writes; network limited to needed domains. Secrets (`~/.ssh`)
+   are protected by **omission** from the allow-list -- NOT by `denyRead` (in srt,
+   `allowRead` beats `denyRead`, so "allow `/` then deny `~/.ssh`" leaves the secret
+   readable). Key non-obvious entries:
+   - `"allowPty": true` (top-level) -- required or the interactive TUI garbles keyboard
+     input. Enables the `/dev/ptmx` + `/dev/ttys*` ioctls the TUI needs for raw mode.
+   - `"network": { "allowLocalBinding": true, "deniedDomains": [], "allowedDomains": [...] }`
+     -- `deniedDomains` MUST be present (empty is fine) or srt silently falls back to
+     deny-all. `allowLocalBinding` is needed for MCP OAuth callback ports.
+   - Network: both `bedrock-runtime.<region>` AND `bedrock.<region>` (control-plane, hit
+     at startup), plus your MCP hosts, plus `files.pythonhosted.org` for any `uvx` MCP
+     server (PyPI downloads redirect there).
+   - Read allow-list must include `~/.agents` (skills live there), `~/.local`, `~/Library`,
+     `~/.cache`, `~/.aws`, `~/code`, etc. A missing READ path kills Claude SILENTLY
+     (exit 0, no output).
+   - Write allow-list: `~/.claude`, `~/.claude.json`, `/var/folders` (TMPDIR), `~/.cache/uv`
+     + `~/.local/share/uv` (for uvx MCP servers), your project dirs.
+   - A write path needs its PARENT chain in `allowRead` (Seatbelt must traverse it) -- e.g.
+     `~/.cache/uv` in allowWrite is still denied until `~/.cache` is in allowRead.
+
+3. Launch via a shell function that runs your credential provider OUTSIDE the wrap (so
+   keychain/SSO works before the sandbox exists) and `srt` wrapping only claude. Any model
+   provider env vars prefix the whole line so they reach claude.
+
+### Rules / gotchas
+
+- **Launch from a bare terminal**, never from inside a Claude `!` -- nested sandboxes break
+  srt's localhost proxy (`Error: listen EPERM 127.0.0.1`).
+- **First-time MCP OAuth: authenticate under plain `claude`, not sandboxed.** The sandbox
+  USES a saved token fine, but the initial browser-auth-then-reconnect handshake fails for
+  some servers (notion did, slack didn't). Auth once outside; the saved token in
+  `~/.claude.json` then works inside.
+- Browser auto-launch for OAuth doesn't work in-sandbox (blocks `open`); Claude prints the
+  URL for copy-paste. Leave it -- the fix (`allowAppleEvents`) widens the boundary too far.
+- **Debugging a silent failure:** capture Seatbelt denials with
+  `log stream --style compact --predicate 'sender == "Sandbox"' --timeout 22 > /tmp/sblog.txt 2>&1 &`
+  then run the failing command and grep `/tmp/sblog.txt` for `deny`. `file-read-data`
+  denials are fatal; metadata probes and telemetry mach-lookups (`diagnosticd`, `trustd`)
+  are not.

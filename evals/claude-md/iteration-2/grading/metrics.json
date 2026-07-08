@@ -1,0 +1,311 @@
+{
+  "summary": {
+    "full": {
+      "3": {
+        "comment": 0,
+        "doc": 0,
+        "log": 0,
+        "fns": 1,
+        "code_lines": 16.75
+      },
+      "6": {
+        "comment": 0.5,
+        "doc": 0,
+        "log": 0,
+        "fns": 1,
+        "code_lines": 36.5
+      },
+      "9": {
+        "comment": 0,
+        "doc": 0,
+        "log": 0,
+        "fns": 1.25,
+        "code_lines": 34.25
+      },
+      "11": {
+        "comment": 0.5,
+        "doc": 0,
+        "log": 0,
+        "fns": 1.5,
+        "code_lines": 21.5
+      }
+    },
+    "ablated": {
+      "3": {
+        "comment": 0,
+        "doc": 0,
+        "log": 0,
+        "fns": 1,
+        "code_lines": 15
+      },
+      "6": {
+        "comment": 0,
+        "doc": 0,
+        "log": 0,
+        "fns": 1,
+        "code_lines": 33.75
+      },
+      "9": {
+        "comment": 0,
+        "doc": 0,
+        "log": 0,
+        "fns": 1,
+        "code_lines": 30.25
+      },
+      "11": {
+        "comment": 0,
+        "doc": 0,
+        "log": 0,
+        "fns": 1,
+        "code_lines": 15
+      }
+    }
+  },
+  "raw": {
+    "full": {
+      "3": [
+        {
+          "comment": 0,
+          "doc": 0,
+          "log": 0,
+          "fns": 1,
+          "code_lines": 16
+        },
+        {
+          "comment": 0,
+          "doc": 0,
+          "log": 0,
+          "fns": 1,
+          "code_lines": 17
+        },
+        {
+          "comment": 0,
+          "doc": 0,
+          "log": 0,
+          "fns": 1,
+          "code_lines": 15
+        },
+        {
+          "comment": 0,
+          "doc": 0,
+          "log": 0,
+          "fns": 1,
+          "code_lines": 19
+        }
+      ],
+      "6": [
+        {
+          "comment": 1,
+          "doc": 0,
+          "log": 0,
+          "fns": 1,
+          "code_lines": 40
+        },
+        {
+          "comment": 0,
+          "doc": 0,
+          "log": 0,
+          "fns": 1,
+          "code_lines": 41
+        },
+        {
+          "comment": 1,
+          "doc": 0,
+          "log": 0,
+          "fns": 1,
+          "code_lines": 32
+        },
+        {
+          "comment": 0,
+          "doc": 0,
+          "log": 0,
+          "fns": 1,
+          "code_lines": 33
+        }
+      ],
+      "9": [
+        {
+          "comment": 0,
+          "doc": 0,
+          "log": 0,
+          "fns": 1,
+          "code_lines": 37
+        },
+        {
+          "comment": 0,
+          "doc": 0,
+          "log": 0,
+          "fns": 2,
+          "code_lines": 43
+        },
+        {
+          "comment": 0,
+          "doc": 0,
+          "log": 0,
+          "fns": 1,
+          "code_lines": 28
+        },
+        {
+          "comment": 0,
+          "doc": 0,
+          "log": 0,
+          "fns": 1,
+          "code_lines": 29
+        }
+      ],
+      "11": [
+        {
+          "comment": 0,
+          "doc": 0,
+          "log": 0,
+          "fns": 2,
+          "code_lines": 29
+        },
+        {
+          "comment": 0,
+          "doc": 0,
+          "log": 0,
+          "fns": 2,
+          "code_lines": 24
+        },
+        {
+          "comment": 2,
+          "doc": 0,
+          "log": 0,
+          "fns": 1,
+          "code_lines": 11
+        },
+        {
+          "comment": 0,
+          "doc": 0,
+          "log": 0,
+          "fns": 1,
+          "code_lines": 22
+        }
+      ]
+    },
+    "ablated": {
+      "3": [
+        {
+          "comment": 0,
+          "doc": 0,
+          "log": 0,
+          "fns": 1,
+          "code_lines": 16
+        },
+        {
+          "comment": 0,
+          "doc": 0,
+          "log": 0,
+          "fns": 1,
+          "code_lines": 14
+        },
+        {
+          "comment": 0,
+          "doc": 0,
+          "log": 0,
+          "fns": 1,
+          "code_lines": 15
+        },
+        {
+          "comment": 0,
+          "doc": 0,
+          "log": 0,
+          "fns": 1,
+          "code_lines": 15
+        }
+      ],
+      "6": [
+        {
+          "comment": 0,
+          "doc": 0,
+          "log": 0,
+          "fns": 1,
+          "code_lines": 21
+        },
+        {
+          "comment": 0,
+          "doc": 0,
+          "log": 0,
+          "fns": 1,
+          "code_lines": 39
+        },
+        {
+          "comment": 0,
+          "doc": 0,
+          "log": 0,
+          "fns": 1,
+          "code_lines": 45
+        },
+        {
+          "comment": 0,
+          "doc": 0,
+          "log": 0,
+          "fns": 1,
+          "code_lines": 30
+        }
+      ],
+      "9": [
+        {
+          "comment": 0,
+          "doc": 0,
+          "log": 0,
+          "fns": 1,
+          "code_lines": 41
+        },
+        {
+          "comment": 0,
+          "doc": 0,
+          "log": 0,
+          "fns": 1,
+          "code_lines": 21
+        },
+        {
+          "comment": 0,
+          "doc": 0,
+          "log": 0,
+          "fns": 1,
+          "code_lines": 20
+        },
+        {
+          "comment": 0,
+          "doc": 0,
+          "log": 0,
+          "fns": 1,
+          "code_lines": 39
+        }
+      ],
+      "11": [
+        {
+          "comment": 0,
+          "doc": 0,
+          "log": 0,
+          "fns": 1,
+          "code_lines": 14
+        },
+        {
+          "comment": 0,
+          "doc": 0,
+          "log": 0,
+          "fns": 1,
+          "code_lines": 11
+        },
+        {
+          "comment": 0,
+          "doc": 0,
+          "log": 0,
+          "fns": 1,
+          "code_lines": 19
+        },
+        {
+          "comment": 0,
+          "doc": 0,
+          "log": 0,
+          "fns": 1,
+          "code_lines": 16
+        }
+      ]
+    }
+  },
+  "missing": []
+}

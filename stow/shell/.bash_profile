@@ -12,7 +12,7 @@ export HISTFILESIZE=
 export HISTSIZE=9999999
 export HISTTIMEFORMAT="%d/%m/%y %T "
 
-export PATH="/opt/homebrew/bin:$HOME/bin:$HOME/bin/scripts:$HOME/code/futils/bin:$PATH"
+export PATH="$HOME/bin:/opt/homebrew/bin:$HOME/bin/scripts:$HOME/code/futils/bin:$PATH"
 export PATH="$PATH:$HOME/code/apl-inspired-filters/target/release:$HOME/Library/Python/3.14/bin"
 
 export EDITOR=vim
@@ -177,6 +177,7 @@ kube-get-pods-all-ns() {
   kubectl get pods --all-namespaces
 }
 
+# alias npm='/usr/local/bin/sfw-macos-arm64 npm'
 alias av=aws-vault
 alias noprofile='unset ACTIVE_PROFILE ${!AWS_*}'
 alias b=booger
@@ -197,7 +198,7 @@ alias chars='grep -o .'
 alias upper='tr [:lower:] [:upper:]'
 alias lower='tr [:upper:] [:lower:]'
 alias d='date "+%Y-%m-%d"'
-alias vecka='date +"%U"'
+alias vecka='date +"%V"'
 alias nowrap='less -SE'
 alias hl='grep --color -e'
 alias serve='python3 -m http.server'
@@ -241,3 +242,9 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && . "$HOME/.sdkman/bin/sdkman-init.sh"
 
 [[ -f "$HOME/.bash_profile_funnel" ]] && . "$HOME/.bash_profile_funnel"
+
+# Keep this before other npm paths!
+# export PATH="$HOME:$HOME/bin/sfw-shims/npm:$PATH"
+
+# Added by socketinstall.sh
+# export PATH="$HOME/.local/bin:$PATH"

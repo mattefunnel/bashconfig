@@ -1,0 +1,49 @@
+{
+  "network": {
+    "allowLocalBinding": true,
+    "deniedDomains": [],
+    "allowedDomains": [
+      "bedrock-runtime.eu-north-1.amazonaws.com",
+      "bedrock.eu-north-1.amazonaws.com",
+      "sts.eu-north-1.amazonaws.com",
+      "mcp.slack.com",
+      "mcp.notion.com",
+      "pypi.org",
+      "portal.sso.eu-north-1.amazonaws.com",
+      "oidc.eu-north-1.amazonaws.com",
+      "crates.io",
+      "static.crates.io",
+      "index.crates.io",
+      "github.com",
+      "api.github.com",
+      "raw.githubusercontent.com",
+      "docs.rs",
+      "files.pythonhosted.org"
+    ]
+  },
+  "allowPty": true,
+  "filesystem": {
+    "denyRead": ["/"],
+    "allowRead": [
+      "/usr", "/bin", "/sbin", "/opt/homebrew", "/System", "/Library",
+      "/etc", "/private", "/dev", "/var", "/tmp", "/Applications",
+      "~/Library", "~/bin",
+      "~/.local", "~/.claude", "~/.claude.json", "~/.agents",
+      "~/.aws", "~/.sdkman",
+      "~/code", "~/Documents/notes",
+      "~/.cargo", "~/.rustup", "~/.m2", "~/.gradle",
+      "~/.config", "~/.gitconfig", "~/.gitignore_global", "~/.npm", "~/.cache"
+    ],
+    "allowWrite": [
+      "~/code", "~/.claude", "~/.claude.json",
+      "~/.aws/sso", "~/Library/Keychains",
+      "~/.cargo", "/tmp", "/private/tmp", "/var/folders", "~/.m2", "~/.gradle",
+      "~/Documents/notes", "~/.cache/uv", "~/.local/share/uv", "~/.npm"
+    ],
+    "denyWrite": [
+      "~/code/bashconfig/stow/claude/.claude/settings.json",
+      "~/code/bashconfig/stow/claude/.claude/hooks",
+      "~/code/bashconfig/stow/claude/.claude/agents"
+    ]
+  }
+}

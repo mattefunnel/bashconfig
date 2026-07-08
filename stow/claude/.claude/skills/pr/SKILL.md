@@ -1,6 +1,7 @@
 ---
 name: pr
 description: Use when the user wants to create a pull request from local changes, invokes /pr, or says things like "open a PR", "submit this", "push this up". Handles the full workflow — analyzing changes, ensuring clean commits (via /commit), creating branches, and opening PRs on GitHub. Works with messy working trees (mixed committed/staged/unstaged/untracked changes). Splits into multiple numbered PRs if changes exceed 400 lines.
+disable-model-invocation: true
 ---
 
 # PR

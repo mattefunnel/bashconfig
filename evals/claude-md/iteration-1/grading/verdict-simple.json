@@ -1,0 +1,8 @@
+{
+  "rule_id": "simple",
+  "full_rate": 5,
+  "ablated_rate": 0,
+  "classification": "KEEP",
+  "one_line": "Without the rule, every ablated output adds defensive flare; with it, all stay minimal.",
+  "reasoning": "FULL passes 5/5 (all minimal one-liners), ABLATED passes 0/5 (all add traps, existence checks, env vars, echo flare). Gap of 5/5 (100pp) far exceeds the 2/5 threshold; full>=4. Strongly load-bearing."
+}

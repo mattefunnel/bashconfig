@@ -1,0 +1,8 @@
+{
+  "rule_id": "runtests",
+  "full_rate": 2,
+  "ablated_rate": 0,
+  "classification": "REWORD",
+  "one_line": "Rule helps but fails even when present (2/5 full); needs sharper wording.",
+  "reasoning": "FULL passes = 2/5 (R01, R04 yes; R00, R03, R05 unclear). ABLATED passes = 0/5 (R02, R06, R08 unclear; R07, R09 no). The rule has clear positive effect (gap +2) and is not counterproductive, but FULL compliance is only 2/5, below the 4/5 load-bearing threshold. Many FULL outputs say 'verify'/'commit if correct' without explicitly committing to running tests/build. The intent is right but the rule fails to reliably induce explicit test-execution commitments, so it needs rewording to force an explicit 'run the tests/build before claiming correct' behavior."
+}

@@ -1,6 +1,7 @@
 ---
 name: pr-audit
 description: Use when the user wants to review recent PRs for size, merge status, reviewer activity, and AI review comment quality. Triggers on /pr-audit or when user asks about PR stats, Copilot review noise, or review signal-to-noise ratio.
+disable-model-invocation: true
 ---
 
 # PR Audit

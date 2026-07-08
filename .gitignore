@@ -29,4 +29,7 @@ stow/claude/.claude/skills/tdd
 stow/claude/.claude/skills/to-issues
 stow/claude/.claude/skills/to-prd
 stow/claude/.claude/skills/write-a-skill
-stow/claude/.claude/skills/zoom-out
+*__pycache__*
+
+# Raw eval run outputs — keep method/fixtures/runner/verdict, not the bulky per-run files
+**/evals/**/runs/

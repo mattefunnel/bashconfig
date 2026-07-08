@@ -1,0 +1,8 @@
+{
+  "rule_id": "loc400",
+  "full_rate": 4,
+  "ablated_rate": 0,
+  "classification": "KEEP",
+  "one_line": "Load-bearing: full 4/5 vs ablated 0/5, gap 4.",
+  "reasoning": "FULL passes: R00,R03,R07,R08 (R06 fails, treats cap as advisory). ABLATED passes: none (R01,R02,R04,R05,R09 all ignore the 400 LoC limit). full_rate=4 >=4 and full-ablated gap=4 >=2, so the rule is load-bearing. KEEP."
+}

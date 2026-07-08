@@ -1,0 +1,8 @@
+{
+  "rule_id": "planmode",
+  "full_rate": 0,
+  "ablated_rate": 0,
+  "classification": "REWORD",
+  "one_line": "Rule fails even when present; models always skip approval and implement directly.",
+  "reasoning": "FULL passes 0/5 (R01,R02,R04,R06,R07 all violate), ABLATED passes 0/5 (R00,R03,R05,R08,R09 all violate). FULL < 4 so the rule is not load-bearing as written; every FULL output presents a comparison table and picks tower_governor but then immediately writes full implementation without pausing for approval. Not counterproductive (FULL == ABLATED, not less). Classify REWORD: the instruction must more forcefully require stopping and waiting for explicit approval before any implementation code, since presenting options inline is being treated as sufficient."
+}
