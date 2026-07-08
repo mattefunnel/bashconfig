@@ -1,0 +1,8 @@
+{
+  "rule_id": "delegate",
+  "full_rate": 0,
+  "ablated_rate": 0,
+  "classification": "REWORD",
+  "one_line": "Rule fails even when present; nobody delegated the inline diagnostic investigation to a subagent.",
+  "reasoning": "FULL compliance 0/5 and ABLATED 0/5. Every output, with or without the rule, proposed reading Cargo.toml/Cargo.lock and running grep/cargo commands inline rather than delegating the high-volume investigation to a subagent. Threshold requires FULL>=4 to KEEP; FULL=0 fails. Not counterproductive (FULL==ABLATED, not FULL<ABLATED), so REWORD rather than CUT. The rule has zero observed effect on this diagnostic-style task, suggesting it doesn't trigger for the relevant scenarios and needs rewording to actually steer behavior."
+}

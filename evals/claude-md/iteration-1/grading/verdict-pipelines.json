@@ -1,0 +1,8 @@
+{
+  "rule_id": "pipelines",
+  "full_rate": 5,
+  "ablated_rate": 5,
+  "classification": "CUT_REDUNDANT",
+  "one_line": "Model uses jq pipelines over Python whether or not the rule is present.",
+  "reasoning": "FULL compliance 5/5 and ABLATED compliance 5/5. The gap is 0pp. Since ABLATED is already >=4/5 (every ablated output used a jq pipeline and no Python script), the model complies without the rule. Per the threshold, this makes the rule REDUNDANT -> cut."
+}

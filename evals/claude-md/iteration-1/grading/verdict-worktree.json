@@ -1,0 +1,8 @@
+{
+  "rule_id": "worktree",
+  "full_rate": 5,
+  "ablated_rate": 0,
+  "classification": "KEEP",
+  "one_line": "Strongly load-bearing: 5/5 with rule, 0/5 without; clear 100pp gap.",
+  "reasoning": "FULL passes: R01,R03,R04,R07,R08 = 5/5. ABLATED passes: R00,R02,R05,R06,R09 = 0/5. full>=4 and full-ablated=5>=2, so KEEP. Without the rule the model uniformly defaults to sibling dirs (~/code/transform-rate-limit, ../transform-rate-limit) outside the repo; with it, all outputs use .worktrees/ inside the repo."
+}

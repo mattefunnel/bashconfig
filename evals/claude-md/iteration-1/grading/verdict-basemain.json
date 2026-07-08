@@ -1,0 +1,8 @@
+{
+  "rule_id": "basemain",
+  "full_rate": 5,
+  "ablated_rate": 0,
+  "classification": "KEEP",
+  "one_line": "Strongly load-bearing: full 5/5 vs ablated 0/5; without it every PR targets the predecessor branch.",
+  "reasoning": "FULL outputs (R01,R02,R03,R04,R07) all use --base main: 5/5. ABLATED outputs (R00,R05,R06,R08,R09) all use --base A targeting the predecessor branch: 0/5. Gap = 5/5 (100pp), well above the 40pp threshold, and full >= 4. Removing the rule flips behavior completely, so the rule is clearly load-bearing."
+}

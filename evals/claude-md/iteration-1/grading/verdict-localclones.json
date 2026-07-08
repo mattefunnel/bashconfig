@@ -1,0 +1,8 @@
+{
+  "rule_id": "localclones",
+  "full_rate": 5,
+  "ablated_rate": 5,
+  "classification": "CUT_REDUNDANT",
+  "one_line": "Model reads local clones with line refs even without the rule; fully redundant.",
+  "reasoning": "FULL passes 5/5 (R00,R03,R04,R07,R08 all compliant). ABLATED passes 5/5 (R01,R02,R05,R06,R09 all compliant). Since ABLATED>=4, the model already prefers local clones over web fetching without the rule present. No compliance gap (5-5=0). Rule is redundant -> cut."
+}

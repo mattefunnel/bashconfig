@@ -12,3 +12,5 @@ local_us_overrides.env
 .worktrees
 .booger
 **/.claude/settings.local.json
+
+**/.claude/.cc-writes/

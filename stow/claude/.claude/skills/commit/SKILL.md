@@ -51,7 +51,7 @@ The goal is commits where each one is a coherent, reviewable unit. Usually this 
 - Focus on what changed, not why (the PR description handles "why")
 - 1 line is fine; 2 lines if needed. No essays.
 - End with: `Co-Authored-By: Claude <noreply@anthropic.com>`
-- Always use a HEREDOC for the message
+- For multi-line messages, write the message to a per-invocation temp file like `/tmp/claude/commit-msg-<random>.txt` (pick a few random digits to avoid colliding with other concurrent sessions), then commit with `git commit -F <that file>` (heredocs are blocked by the permission hook). Single-line messages can use `git commit -m "..."`.
 
 ## Rules
 

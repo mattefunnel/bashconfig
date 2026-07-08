@@ -1,0 +1,9 @@
+{
+  "rule_id": "logging",
+  "full_rate": 5,
+  "ablated_rate": 5,
+  "classification": "CUT_REDUNDANT",
+  "one_line": "Model adds no entry/exit logging even without the rule; fully redundant.",
+  "full_passes": ["R02", "R05", "R06", "R07", "R08"],
+  "ablated_passes": ["R00", "R01", "R03", "R04", "R09"]
+}

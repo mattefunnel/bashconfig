@@ -1,0 +1,110 @@
+{
+  "res": {
+    "full": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "ablated": [
+      0,
+      0,
+      1,
+      2,
+      0,
+      0,
+      0,
+      2,
+      3,
+      0,
+      0,
+      1,
+      0,
+      1,
+      0
+    ]
+  },
+  "detail": {
+    "full/k1": {
+      "added_code_lines": 10,
+      "comment_lines": 0
+    },
+    "full/k2": {
+      "added_code_lines": 9,
+      "comment_lines": 0
+    },
+    "full/k3": {
+      "added_code_lines": 9,
+      "comment_lines": 0
+    },
+    "full/k4": {
+      "added_code_lines": 10,
+      "comment_lines": 0
+    },
+    "full/k5": {
+      "added_code_lines": 10,
+      "comment_lines": 0
+    },
+    "ablated/k1": {
+      "added_code_lines": 9,
+      "comment_lines": 0
+    },
+    "ablated/k2": {
+      "added_code_lines": 10,
+      "comment_lines": 0
+    },
+    "ablated/k3": {
+      "added_code_lines": 11,
+      "comment_lines": 1
+    },
+    "ablated/k4": {
+      "added_code_lines": 12,
+      "comment_lines": 2
+    },
+    "ablated/k5": {
+      "added_code_lines": 10,
+      "comment_lines": 0
+    },
+    "ablated/k6": {
+      "added_code_lines": 10,
+      "comment_lines": 0
+    },
+    "ablated/k7": {
+      "added_code_lines": 9,
+      "comment_lines": 0
+    },
+    "ablated/k8": {
+      "added_code_lines": 12,
+      "comment_lines": 2
+    },
+    "ablated/k9": {
+      "added_code_lines": 13,
+      "comment_lines": 3
+    },
+    "ablated/k10": {
+      "added_code_lines": 9,
+      "comment_lines": 0
+    },
+    "ablated/k11": {
+      "added_code_lines": 10,
+      "comment_lines": 0
+    },
+    "ablated/k12": {
+      "added_code_lines": 11,
+      "comment_lines": 1
+    },
+    "ablated/k13": {
+      "added_code_lines": 10,
+      "comment_lines": 0
+    },
+    "ablated/k14": {
+      "added_code_lines": 10,
+      "comment_lines": 1
+    },
+    "ablated/k15": {
+      "added_code_lines": 10,
+      "comment_lines": 0
+    }
+  }
+}

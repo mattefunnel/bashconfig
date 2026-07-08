@@ -1,0 +1,8 @@
+{
+  "rule_id": "shortest",
+  "full_rate": 5,
+  "ablated_rate": 5,
+  "classification": "CUT_REDUNDANT",
+  "one_line": "Model writes a single inline function with or without the rule; redundant.",
+  "reasoning": "FULL passes 5/5 (R00,R03,R04,R08,R09) and ABLATED passes 5/5 (R01,R02,R05,R06,R07). Since ABLATED >= 4, the model already prefers a single straight-line function without the rule, so it is redundant. Gap is 0."
+}

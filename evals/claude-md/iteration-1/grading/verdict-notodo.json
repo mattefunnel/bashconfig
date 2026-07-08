@@ -1,0 +1,8 @@
+{
+  "rule_id": "notodo",
+  "full_rate": 5,
+  "ablated_rate": 2,
+  "classification": "KEEP",
+  "one_line": "Full 5/5 vs ablated 2/5; rule reliably prevents ignored/TODO test scaffolding.",
+  "reasoning": "FULL passes: R01,R03,R04,R05,R07 = 5/5. ABLATED passes: R08,R09 = 2/5 (R00,R02,R06 add ignored/placeholder/TODO stubs). full=5>=4 and gap=3>=2 -> KEEP. Ablated 2/5 shows the model regularly produces forbidden scaffolding without the rule."
+}

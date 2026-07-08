@@ -1,0 +1,8 @@
+{
+  "rule_id": "parallel",
+  "full_rate": 4,
+  "ablated_rate": 5,
+  "classification": "CUT_REDUNDANT",
+  "one_line": "Model fans out parallel agents without the rule; ablated beats full, so redundant.",
+  "reasoning": "FULL passes: R00 yes, R02 no, R03 yes, R04 yes, R06 yes = 4/5. ABLATED passes: R01 yes, R05 yes, R07 yes, R08 yes, R09 yes = 5/5. ablated_rate (5) >= 4, so the model complies without the rule -> CUT_REDUNDANT. Notably full (4) < ablated (5), confirming the rule adds no lift and is at best inert."
+}

@@ -48,3 +48,10 @@ set_prompt() {
 }
 
 PROMPT_COMMAND=set_prompt
+# Socket CLI completion for "socket"
+if [ -f "/Users/mattias.johansson/.local/share/socket/completion/socket-completion.bash" ]; then
+    # Load the tab completion script
+    source "/Users/mattias.johansson/.local/share/socket/completion/socket-completion.bash"
+    # Tell bash to use this function for tab completion of this function
+    complete -F _socket_completion socket
+fi

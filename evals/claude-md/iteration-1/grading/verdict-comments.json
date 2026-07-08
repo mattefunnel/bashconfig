@@ -1,0 +1,8 @@
+{
+  "rule_id": "comments",
+  "full_rate": 1,
+  "ablated_rate": 3,
+  "classification": "CUT_COUNTERPRODUCTIVE",
+  "one_line": "Rule underperforms its own absence; FULL passes 1/5 vs ABLATED 3/5.",
+  "reasoning": "FULL compliance is 1/5 (R00 yes; R01,R02,R07,R08 no) — well below the 4/5 load-bearing threshold. ABLATED compliance is 3/5 (R03,R06,R09 yes; R04,R05 no). Since FULL (1) < ABLATED (3), the rule is counterproductive: the model produces fewer explanatory comments WITHOUT the rule than with it. Most FULL violations were stray test/Cargo.toml background comments (e.g. '// 14:30+02:00 == 12:30Z'), which the verbose rule failed to suppress and may even have primed. CUT_COUNTERPRODUCTIVE."
+}

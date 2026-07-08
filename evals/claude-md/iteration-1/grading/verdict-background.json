@@ -1,0 +1,8 @@
+{
+  "rule_id": "background",
+  "full_rate": 5,
+  "ablated_rate": 5,
+  "classification": "CUT_REDUNDANT",
+  "one_line": "Model always backgrounds long builds even without the rule; rule adds nothing.",
+  "reasoning": "FULL 5/5 and ABLATED 5/5. Every output, with or without the rule present, ran the long command via run_in_background and avoided foreground blocking. ABLATED >= 4 means the model complies without the rule, so it is redundant. Gap is 0pp, far below the 40pp load-bearing threshold."
+}

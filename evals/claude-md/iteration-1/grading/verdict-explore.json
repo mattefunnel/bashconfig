@@ -1,0 +1,8 @@
+{
+  "rule_id": "explore",
+  "full_rate": 0,
+  "ablated_rate": 3,
+  "classification": "CUT_COUNTERPRODUCTIVE",
+  "one_line": "Rule present yields more inline grepping than rule absent; counterproductive.",
+  "reasoning": "FULL passes 0/5 (R02,R06,R07,R08,R09 all non-compliant), ABLATED passes 3/5 (R00,R01,R03 yes; R04,R05 no). FULL (0) < ABLATED (3), so the rule is counterproductive: with the rule present the model proposes detailed inline grep/read methodologies before fan-out, whereas without it the model delegates cleanly. Fails FULL>=4 threshold and FULL<ABLATED -> CUT_COUNTERPRODUCTIVE."
+}

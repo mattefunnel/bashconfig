@@ -1,0 +1,8 @@
+{
+  "rule_id": "shell",
+  "full_rate": 4,
+  "ablated_rate": 0,
+  "classification": "KEEP",
+  "one_line": "Without the rule, all 5 ablated outputs used for-loops; with it, 4/5 complied.",
+  "reasoning": "FULL: R00,R01,R02,R06 pass; R04 fails (compound && pipeline) = 4/5. ABLATED: R03,R05,R07,R08,R09 all fail (for loops) = 0/5. full=4 (>=4) and gap=4 (>=2) -> KEEP. Rule is strongly load-bearing: removing it collapses compliance to zero."
+}

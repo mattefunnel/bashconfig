@@ -1,6 +1,7 @@
 ---
 name: review-habits
 description: Audit how the user works with Claude Code and produce prioritized workflow recommendations. Inventories current settings/hooks/skills/plugins, analyzes recent conversation logs for tool-usage and friction signals, cross-references the latest Claude Code CHANGELOG and best-practices docs to surface unused features. Use when the user asks to "review my habits", "audit my Claude Code workflow", "find workflow improvements", "what should I change about how I use Claude Code", invokes /review-habits, or wants recommendations about settings, skills, or plugins they could adopt or drop.
+disable-model-invocation: true
 ---
 
 # Review Habits

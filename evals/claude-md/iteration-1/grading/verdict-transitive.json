@@ -1,0 +1,8 @@
+{
+  "rule_id": "transitive",
+  "full_rate": 5,
+  "ablated_rate": 4,
+  "classification": "CUT_REDUNDANT",
+  "one_line": "Model traces transitive deps even without the rule; ablated compliance already 4/5.",
+  "reasoning": "FULL=5/5 (R00,R03,R04,R08,R09 all pass). ABLATED=4/5 (only R01 fails). Gap=1pp (<40pp threshold) and ablated>=4, so the rule is redundant: the model performs multi-hop transitive tracing without it."
+}

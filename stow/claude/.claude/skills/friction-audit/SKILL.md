@@ -1,6 +1,7 @@
 ---
 name: friction-audit
 description: Audit recent Claude Code transcripts to find sources of friction — permission prompts, deferred-tool errors, dead/buggy allowlist entries, repeatedly denied command shapes — then propose concrete fixes (settings.json edits, CLAUDE.md additions, hooks). Use whenever the user mentions excessive permission prompts, "Claude keeps asking", "this used to be more autonomous", workflow friction, "unknown type string" errors, or wants a sweep of why their setup feels slow. Triggers on phrases like "audit my friction", "why is Claude getting stuck", "fix my permissions", "what's making things slow", or `/friction-audit`. Broader than fewer-permission-prompts — that one only adds read-only allow rules; this one diagnoses root causes (compound-command shapes, dead allowlist entries, deferred tools) and proposes structural fixes including hook setup and CLAUDE.md guidance.
+disable-model-invocation: true
 ---
 
 # Friction audit
