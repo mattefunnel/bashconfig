@@ -85,17 +85,27 @@ Use `\gh pr create` for each PR. All PRs target the default branch (main/master)
 
 ```bash
 \gh pr create --base main --title "Short title" --body "$(cat <<'EOF'
-Brief description of what changed. Don't invent motivations.
+One sentence: what this PR is.
+
+- context / why this exists (link related issues/PRs/Slack with [this](url) — link liberally)
+- the approach in a few words
+- forward intent, if any ("if this works, I intend to ...")
+- status ("not ready to swap yet — this is a step in confirming it works end-to-end")
+- the eventual plan + who needs to be involved
 
 Co-Authored-By: Claude <noreply@anthropic.com>
 EOF
 )"
 ```
 
-PR description style:
-- Brief — what changed, not why (the reviewer knows the context)
-- If multiple PRs, note the ordering: "Part 1 of 2: ..." / "Part 2 of 2: (merge after #N)"
-- No emoji, no generated "why" explanations, no test plan sections unless there's actually something to say
+PR description style (this is the format the user wants — match it):
+- **First line: one terse sentence stating what the PR is.** No preamble.
+- **Then a short bullet list** giving the reviewer context: why it exists, the approach, forward intent, current status (esp. "this is a step, not the final swap"), and the eventual plan / who's involved.
+- **Link liberally** — related issues, PRs, Slack threads, docs — as inline `[this](url)` / `[that](url)`. The reviewer clicks through for detail; the body stays short.
+- Keep it terse and human — bullets are fragments, not paragraphs. No verbose "## What / ## Why / ## Verified / ## Caveats" section walls.
+- Don't invent motivation — only state intent/context you actually know (from the conversation or the user); if you don't know the "why", just the one-sentence what + factual bullets.
+- No emoji. No "🤖 Generated with…" footer. No test-plan section unless there's genuinely something to say.
+- If multiple PRs, note ordering in a bullet: "part 1 of 2" / "merge after #N".
 
 ## Step 7: Report
 
@@ -111,7 +121,7 @@ After creating all PRs, report:
 - **All PRs target the default branch**, even stacked ones. The user has been burned by accidentally merging into old work branches.
 - **No branch prefixes**: use `descriptive-name`, not `feature/descriptive-name`
 - **Number branches when there are multiple**: `1-thing`, `2-other-thing`
-- **Don't invent context**: the PR description should describe what changed, not guess at motivation
+- **PR body format**: one-sentence "what this is" + a short bullet list of context (why / approach / intent / status / plan), linking related issues/PRs/Slack inline. Terse fragments, not section walls. Don't invent motivation — only state what you actually know. See Step 6.
 - **Leave unrelated changes alone**: if unstaged changes don't belong with the current work, don't touch them
 - **No plan/design docs in PRs**: files in `docs/plans/` are working documents, not deliverables — never include them in PR branches
 - Use `\gh` (backslash-gh) for GitHub CLI commands — `gh` is aliased in this user's shell

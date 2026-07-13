@@ -134,6 +134,10 @@
           {
             "type": "command",
             "command": "python3 /Users/mattias.johansson/.claude/hooks/block-compound-bash.py"
+          },
+          {
+            "type": "command",
+            "command": "python3 /Users/mattias.johansson/.claude/hooks/block-gh-comments.py"
           }
         ]
       },
@@ -221,41 +225,27 @@
       "allowWrite": [
         "/var/folders",
         "/private/var/folders",
-        "/Users/mattias.johansson/.npm"
-      ],
-      "denyWrite": [
-        "/Users/mattias.johansson/code/bashconfig/stow/claude/.claude"
-      ],
-      "denyRead": [
-        "/"
-      ],
-      "allowRead": [
-        "/usr",
-        "/bin",
-        "/sbin",
-        "/opt/homebrew",
-        "/System",
-        "/Library",
-        "/etc",
-        "/private",
-        "/dev",
-        "/tmp",
-        "/var",
+        "/Users/mattias.johansson/.npm",
         "~/code",
+        "~/Documents/notes",
         "~/.m2",
         "~/.gradle",
-        "~/Documents/notes",
-        "~/.cargo/bin",
-        "~/.cargo/registry",
-        "~/.cargo/git",
-        "~/.cargo/config.toml",
-        "~/.claude/projects",
-        "~/.claude/plugins",
-        "~/.claude/plans",
-        "~/.local",
-        "~/.rustup",
-        "~/.gitconfig",
-        "~/.gitignore_global"
+        "~/.cargo",
+        "/tmp"
+      ],
+      "denyWrite": [
+        "~/code/bashconfig/stow/claude/.claude",
+        "~/code/bashconfig/stow/shell"
+      ]
+    },
+    "credentials": {
+      "files": [
+        { "path": "~/.aws", "mode": "deny" },
+        { "path": "~/.ssh", "mode": "deny" },
+        { "path": "~/.config/gh", "mode": "deny" },
+        { "path": "~/.cargo/credentials.toml", "mode": "deny" },
+        { "path": "~/.claude/.credentials.json", "mode": "deny" },
+        { "path": "~/.netrc", "mode": "deny" }
       ]
     },
     "excludedCommands": [
@@ -271,8 +261,8 @@
     ]
   },
   "effortLevel": "medium",
+  "tui": "fullscreen",
   "skipWorkflowUsageWarning": true,
   "editorMode": "vim",
-  "autoCompactEnabled": true,
-  "tui": "fullscreen"
+  "autoCompactEnabled": true
 }

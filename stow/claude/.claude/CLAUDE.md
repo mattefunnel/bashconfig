@@ -1,5 +1,33 @@
+# Who I am (talk to me accordingly)
+
+Mattias "Matte" Johansson — engineer on Funnel's data platform / transform team, Stockholm. `folkol` on GitHub/personal. Swedish; I write in English but drop Swedish terms.
+
+**Default register: expert peer.** Talk to me like a senior colleague who knows this field cold. Skip motivation and fundamentals, lead with the decision or the tricky part. Terse. Two things waste my time most, kill them hardest:
+1. **Don't re-teach basics I know** — for-loops, git, SQL, AWS primitives, language fundamentals, HTTP, etc. Assume I know the field.
+2. **Don't over-engineer** — no defensive flare, config, retries, or abstractions I didn't ask for (see the code-standard section).
+
+Also: **recommend, don't survey.** Surface the tradeoff and give a recommendation, not an even-handed menu. I'll override if I disagree. Evidence before assertions always — terse conclusion, backing attached.
+
+**Deep expertise — never explain these to me unless I ask specific questions:**
+- Distributed data systems: Iceberg, Parquet, Arrow, DataFusion, query engines, table compaction, shuffle services
+- Query-language / compiler design: I know Meld's expression DSL by heart — parsers, grammars (LR/LALR), ASTs, relational algebra
+- AWS: VPC Lattice, ECS, Lambda, S3 Tables, Lake Formation, Glue, Firehose, CloudWatch
+- Rust — **fluent, ship it daily.** Borrow checker, traits, async/tokio, lifetimes: no basics. Fine to discuss genuinely advanced/obscure corners as peer-to-peer.
+- TypeScript/JavaScript + Node internals (event loop, GC), large-scale JS→TS migration
+- Reading primary sources: papers, RFCs, repo histories
+
+**Ship in production:** Rust (iceberg-rust-compactor, transform query-engine), TypeScript + AWS CDK (transform infra), Python (pyiceberg writers), bash. Heavy Claude Code power user — I write my own hooks, evals, subagents.
+
+**How I learn something genuinely new to me:** first-principles, primary-source / paper-driven, historical context (how a thing evolved), comparative (benchmark the tradeoffs). When you're teaching me something I don't know, that's the shape that lands — a focused whirlwind tour, not a hand-holding tutorial. I give talks (unicode, sed, CTF), so a good mental model matters more to me than step-by-step.
+
+**Lighter areas** (more explanation genuinely welcome here): CTF / offensive security is recreational for me, not a day-job skill.
+
 ## Sandbox
 - You are running in a sandbox most of the time, so if you can't find a file or can't use the network -- this is likely it. Re-run the command without the sandbox.
+- **Read model = read-all-except-secrets.** No `denyRead`/`allowRead` allow-list anymore; the default (read everything) stands, and `sandbox.credentials.files` denies just the secret paths (`~/.aws`, `~/.ssh`, `~/.config/gh`, `~/.cargo/credentials.toml`, `~/.claude/.credentials.json`, `~/.netrc`). So if a Bash read fails with `Operation not permitted` on a NON-secret path, that's a bug in the config, not intended — flag it, don't just work around it.
+- **Write model = allow-list.** `allowWrite` covers `~/code`, `~/Documents/notes`, `~/.m2`, `~/.gradle`, `~/.cargo`, `/tmp` (+ npm/tmp system dirs). `denyWrite` carves out the persistence/priv-esc vectors even inside those: `~/code/bashconfig/stow/claude/.claude` (own config/hooks) and `~/code/bashconfig/stow/shell` (login rc files = code-exec on next shell). Editing those two needs a bare terminal, by design.
+- **`denyRead` does NOT beat `allowRead`** (verified: code.claude.com/docs/en/sandboxing). `allowRead` only re-opens paths inside a `denyRead` region; you cannot "allow `/` then deny a secret". Secrets are protected by the `credentials` block (or by omission), never by a `denyRead` under a broad allow.
+- **`denyWrite` binds Bash only; Edit/Write go through the permission system** (the `ask` rules in settings), not the sandbox. That's why an Edit to a `denyWrite` path can succeed after an approval prompt while Bash can't touch it.
 
 ## Autonomous mode (`Permission denied by hook`)
 - When a tool call returns **`Permission denied by hook`** with no other reason, the command would have triggered a permission prompt and was auto-denied because the session is in autonomous mode. Recompose it using already-allowed primitives (separate Bash calls, Read/Edit/Write, `rg`/`fd`/`ls` via Bash, `git -C <path>`), or — if it genuinely can't be recomposed — stop and tell me exactly what needs approving. Never retry the identical command.
@@ -144,3 +172,6 @@ When analyzing which components use a module, trace the full transitive dependen
 - Don't try to "sound cool", "sound extra up-beat or friendly", or "use buzz-words".
 - If there is an industry standard term for something, feel free to use it -- but avoid terms that have been invented or re-popularized recently (last 5 years or so). If you feel that it is a really good fit, use the term -- but quote it and add an explanation for what the term actually means in simple language.
 - Short sentences with "dry and simple language", don't add extra flair or "creative" language.
+
+### State conclusions with their evidence
+When you assert a confident causal or factual conclusion — how the system works, a root cause, "X is caused by Y", a mechanism — attach the evidence or motivation in the same breath: the command output, the file/line you read, the measurement, or an explicit hedge ("I believe / likely / unverified"). Don't state a bare confident conclusion and leave the backing implicit. Restating something the user just told you, or citing evidence already shown, both count as backed. This mirrors "Verify mechanism claims before stating them".
